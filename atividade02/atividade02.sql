@@ -5,7 +5,9 @@ SELECT * FROM hr.employees
 
 SELECT last_name, job_id, salary AS 'sal' FROM employees
 
-RESPOSTA: Ela é executada com sucesso
+RESPOSTA: Ela não é executada com sucesso.
+	
+codigo correto: SELECT LAST_NAME, JOB_ID, SALARY AS "SAL" FROM hr.employees
 
 --2-) Verdadeiro/FalsoHá 
 --quatro erros de codificação na instrução a seguir. 
@@ -47,8 +49,8 @@ WHERE salary > 10000
 RESPOTA: 
 
 SELECT 
-   	EMPLOYEE_ID AS "EMP#", 
-	JOB_ID AS "JOB#", 
+    EMPLOYEE_ID AS "EMP#", 
+    JOB_ID AS "JOB#", 
     FIRST_NAME AS "Nome", 
     LAST_NAME  AS "Sobrenome", 
     HIRE_DATE  AS "Data de Contratação"
