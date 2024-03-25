@@ -17,7 +17,8 @@ codigo correto: SELECT LAST_NAME, JOB_ID, SALARY AS "SAL" FROM hr.employees
 --last_namesal x 12 ANNUAL SALARY
 --from employees
 
---RESPOSTA: 
+RESPOSTA: 
+
 1-Depois de las_name, falta uma virgula.
 2-A multiplicação é feita pelo asterisco "*"e não pelo "X"
 3-O nome da coluna não é "sal", mas sim "salary"
@@ -28,12 +29,21 @@ SELECT employee_id, last_name, salary * 12 AS ANNUAL_SALARY FROM hr.employees
 
 
 --3-) Qual será o comando que deveremos executar para termos a seguinte saída de dados:
-SELECT * FROM hr.jobs    
 
+RESPOSTA:
+	
+SELECT * FROM hr.jobs    
+	
 SELECT 'O presidente possui o job_title ' ||  job_title || ' e o salario maximo é ' || max_salary AS "presidente"
 FROM hr.jobs WHERE job_title = 'President'
     
 --4-) Selecionar todos os registros da tabela departments que possuam manager_id 200 oulocation_id = 1700.
+
+RESPOSTA:
+
+SELECT * FROM hr.departments
+
+SELECT * FROM hr.departments WHERE manager_id = 200 AND LOCATION_ID = 1700
 
 --5-)Exibir todos os códigos de cargo da tabela employees com salario maior que 10000.
 
