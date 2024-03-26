@@ -69,7 +69,8 @@ FROM hr.employees
 --7-) O departamento de recursos humanos solicitou um relatório de todos os funcionários e os
 --respectivos IDs do cargo. Exiba o sobrenome concatenado com o ID do cargo (separado por
 --uma vírgula e um espaço) e nomeie a coluna como “employee and title”
-
+RESPOSTA:
+	
 --8-) Em função de questões orçamentárias, o departamento precisa de um relatório com o
 --sobrenome e o salário dos funcionários que ganham mais de 12000. (employees)
 
@@ -80,3 +81,18 @@ SELECT * FROM hr.employees
 SELECT LAST_NAME, SALARY FROM hr.employees WHERE salary > 12000
 
 --9-) Exiba o sobrenome e o número de departamento do funcionário 100.
+RESPOSTA:
+	
+--10-) O departamento de recursos humanos precisa localizar os funcionários com altos e baixos
+--salários. Exibir o sobrenome e o salário de todos os funcionários cuja faixa salarial não esteja
+--entre 5000 e 12000.
+
+RESPOSTA:
+
+SELECT * FROM hr.employees
+
+SELECT last_name, salary FROM hr.employees WHERE salary < 5000 OR salary > 12000
+
+--11-) Crie um relatório para exibir o sobrenome, o ID do cargo e a data de admissão dos
+--funcionários cujos sobrenomes sejam Matos e Taylor. Organize a consulta em ordem
+--crescente por data de admissão.
