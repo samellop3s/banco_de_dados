@@ -82,6 +82,11 @@ SELECT LAST_NAME, SALARY FROM hr.employees WHERE salary > 12000
 
 --9-) Exiba o sobrenome e o número de departamento do funcionário 100.
 RESPOSTA:
+
+SELECT * FROM hr.employees
+
+SELECT LAST_NAME, DEPARTMENT_ID
+FROM hr.employees WHERE employee_id = 100
 	
 --10-) O departamento de recursos humanos precisa localizar os funcionários com altos e baixos
 --salários. Exibir o sobrenome e o salário de todos os funcionários cuja faixa salarial não esteja
