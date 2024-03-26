@@ -65,3 +65,18 @@ SELECT
     LAST_NAME  AS "Sobrenome", 
     HIRE_DATE  AS "Data de Contratação"
 FROM hr.employees
+
+--7-) O departamento de recursos humanos solicitou um relatório de todos os funcionários e os
+--respectivos IDs do cargo. Exiba o sobrenome concatenado com o ID do cargo (separado por
+--uma vírgula e um espaço) e nomeie a coluna como “employee and title”
+
+--8-) Em função de questões orçamentárias, o departamento precisa de um relatório com o
+--sobrenome e o salário dos funcionários que ganham mais de 12000. (employees)
+
+RESPOTA: 
+
+SELECT * FROM hr.employees
+
+SELECT LAST_NAME, SALARY FROM hr.employees WHERE salary > 12000
+
+--9-) Exiba o sobrenome e o número de departamento do funcionário 100.
