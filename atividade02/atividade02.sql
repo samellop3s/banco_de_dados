@@ -134,3 +134,12 @@ FROM hr.employees WHERE COMMISSION_PCT IS NOT NULL
 ORDER BY SALARY DESC, COMMISSION_PCT DESC
 
 --14-) Exiba o sobrenome de todos os funcionários que contenha “a” e “e”.
+
+RESPOSTA:
+
+SELECT LAST_NAME 
+FROM hr.employees 
+WHERE LAST_NAME	 LIKE '%a%'	AND LAST_NAME LIKE '%e%'
+
+--15-) Exiba o sobrenome, o cargo e o salário de todos os funcionários cujo cargo sejarepresentante de vendas 
+--(SA_REP) ou estoquista (ST_CLERK) e cujo salário seja diferente de2500, 3500 e 7000.
