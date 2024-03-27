@@ -132,3 +132,5 @@ SELECT * FROM hr.employees
 SELECT LAST_NAME, SALARY, COMMISSION_PCT
 FROM hr.employees WHERE COMMISSION_PCT IS NOT NULL
 ORDER BY SALARY DESC, COMMISSION_PCT DESC
+
+--14-) Exiba o sobrenome de todos os funcionários que contenha “a” e “e”.
