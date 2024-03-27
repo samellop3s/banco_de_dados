@@ -101,3 +101,34 @@ SELECT last_name, salary FROM hr.employees WHERE salary < 5000 OR salary > 12000
 --11-) Crie um relatório para exibir o sobrenome, o ID do cargo e a data de admissão dos
 --funcionários cujos sobrenomes sejam Matos e Taylor. Organize a consulta em ordem
 --crescente por data de admissão.
+
+RESPOSTA:
+
+SELECT * FROM hr.employees
+
+SELECT LAST_NAME, JOB_ID, HIRE_DATE 
+FROM hr.employees WHERE LAST_NAME IN ('Matos', 'Taylor')
+ORDER BY HIRE_DATE ASC
+
+--12-) Exiba o sobrenome e o número do departamento de todos os funcionários nos 
+--departamentos 20 e 50 em ordem alfabética crescente por nome
+
+RESPOSTA:
+
+SELECT * FROM hr.employees
+
+SELECT LAST_NAME, DEPARTMENT_ID 
+FROM hr.employees WHERE DEPARTMENT_ID IN (20, 50)
+ORDER BY LAST_NAME ASC
+
+--13-) Crie um relatório para exibir o sobrenome, o salário e a comissão de todos os 
+--funcionários que ganham comissão. Classifique os dados em ordem decrescente de salário e 
+--comissões.
+
+RESPOSTA:
+
+SELECT * FROM hr.employees
+
+SELECT LAST_NAME, SALARY, COMMISSION_PCT
+FROM hr.employees WHERE COMMISSION_PCT IS NOT NULL
+ORDER BY SALARY DESC, COMMISSION_PCT DESC
