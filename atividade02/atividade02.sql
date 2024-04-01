@@ -70,6 +70,8 @@ FROM hr.employees
 --respectivos IDs do cargo. Exiba o sobrenome concatenado com o ID do cargo (separado por
 --uma vírgula e um espaço) e nomeie a coluna como “employee and title”
 RESPOSTA:
+
+SELECT last_name || ', ' || job_id AS "employee and title" FROM hr.employees;
 	
 --8-) Em função de questões orçamentárias, o departamento precisa de um relatório com o
 --sobrenome e o salário dos funcionários que ganham mais de 12000. (employees)
@@ -139,7 +141,61 @@ RESPOSTA:
 
 SELECT LAST_NAME 
 FROM hr.employees 
-WHERE LAST_NAME	 LIKE '%a%'	AND LAST_NAME LIKE '%e%'
+WHERE LAST_NAME	 LIKE '%a%' AND LAST_NAME LIKE '%e%'
 
 --15-) Exiba o sobrenome, o cargo e o salário de todos os funcionários cujo cargo sejarepresentante de vendas 
 --(SA_REP) ou estoquista (ST_CLERK) e cujo salário seja diferente de2500, 3500 e 7000.
+
+RESPOSTA:
+
+SELECT last_name, job_id, salary FROM hr.employees WHERE (job_id = 'SA_REP' OR job_id = 'ST_CLERK') AND salary NOT IN (2500, 3500, 7000);
+
+--16-) Exibir todos os funcionários cuja comissão seja de 20% (.2)
+
+RESPOSTA:
+
+SELECT * FROM hr.employees WHERE commission_pct = 0.2;
+
+--17-) Exiba o código do departamento, media de salario agrupado por departamento 
+--dos departamentos 60, 100 e 20. Ordene os dados em ordem crescente por departa
+
+RESPOSTA:
+
+SELECT department_id, AVG(salary) AS avg_salary FROM hr.employees WHERE department_id IN (60, 100, 20) GROUP BY department_id ORDER BY department_id;
+
+--18-) Execute o seguinte comando para a criação da tabela 
+--mencionada:create table funcionarios (codigo number (8) primary key,nome varchar(30) not null,salario number(8),celular char (11));
+--Faça a inserção de 10 funcionarios de forma implícita e 10 funcionários de forma explicita
+
+RESPOSTA: 
+
+CREATE TABLE funcionarios (
+    codigo NUMBER(8) PRIMARY KEY,
+    nome VARCHAR(30) NOT NULL,
+    salario NUMBER(8),
+    celular CHAR(11)
+);
+
+INSERT INTO funcionarios VALUES
+(1, 'Funcionario1', 5000, '12345678901'),
+(2, 'Funcionario2', 6000, '12345678902'),
+(3, 'Funcionario2', 7000, '12345678903'),
+(4, 'Funcionario2', 8000, '12345678904'),
+(5, 'Funcionario2', 9000, '12345678905'),
+(6, 'Funcionario2', 10000, '12345678906'),
+(7, 'Funcionario2', 11000, '12345678907'),
+(8, 'Funcionario2', 12000, '12345678908'),
+(9, 'Funcionario2', 13000, '12345678909'),
+(10, 'Funcionario10', 140000, '12345678910');
+
+INSERT INTO funcionarios (codigo, nome, salario, celular) VALUES
+(11, 'Funcionario11', 15000, '12345678911'),
+(12, 'Funcionario12', 16000, '12345678912'),
+(13, 'Funcionario12', 17000, '12345678913'),
+(14, 'Funcionario12', 18000, '12345678914'),
+(15, 'Funcionario12', 19000, '12345678915'),
+(16, 'Funcionario12', 20000, '12345678916'),
+(17, 'Funcionario12', 21000, '12345678917'),
+(18, 'Funcionario12', 22000, '12345678918'),
+(19, 'Funcionario12', 23000, '12345678919'),
+(20, 'Funcionario20', 24000, '12345678920');
