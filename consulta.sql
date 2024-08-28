@@ -104,3 +104,9 @@ order by dia, paciente;
 
 select * from consulta c cross join medicos m;
 
+select m.medico, sum(m.valor_consulta)
+from consulta c 
+right join medicos m on (c.medico_id = m.id)
+group by m.medico;
+
+
