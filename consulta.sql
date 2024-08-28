@@ -77,3 +77,15 @@ select * from consulta where pgto is not null order by dia_hora desc;
 select * from consulta where pgto is not null order by 4 desc;
 
 select id as codigo, medico_id as "Código do medico", cliente_id  "Código do clt", to_char(dia_hora, 'dd/mm/yyyy') as data_hora, pgto from consulta
+
+select * from consulta join medicos on (consulta.medico_id = medicos.id);
+
+select * from consulta c
+
+select to_char(consulta.dia_hora, 'dd/mm/yyyy hh24:mi') as dia_hora, medicos.medico
+from consulta
+join medicos on (consulta.medico_id = medicos.id)
+order by dia_hora;
+
+select * from medicos m 
+left outer join consulta c on (m.id = c.medico_id);
